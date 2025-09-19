@@ -11,14 +11,12 @@ class PetGameApp extends StatelessWidget {
     return MaterialApp(
       title: 'Virtual Pet Game',
       theme: ThemeData(primarySwatch: Colors.teal),
-      home: PetNameScreen(), // Start at name screen
+      home: PetNameScreen(),
     );
   }
 }
 
-// ---------------------------
 // Pet Name Setup Screen
-// ---------------------------
 class PetNameScreen extends StatefulWidget {
   @override
   _PetNameScreenState createState() => _PetNameScreenState();
@@ -67,9 +65,7 @@ class _PetNameScreenState extends State<PetNameScreen> {
   }
 }
 
-// ---------------------------
 // Pet Game Screen
-// ---------------------------
 class PetGameHomePage extends StatefulWidget {
   final String petName;
 
@@ -142,7 +138,6 @@ class _PetGameHomePageState extends State<PetGameHomePage> {
         energyLevel += 5;
         if (energyLevel > 100) energyLevel = 100;
 
-        // Feeding does not affect happiness anymore
         _checkGameOver();
       });
     }
@@ -205,7 +200,7 @@ class _PetGameHomePageState extends State<PetGameHomePage> {
               "- Playing increases happiness but reduces energy & fullness.\n"
               "- Feeding increases fullness & energy.\n"
               "- Happiness, fullness, and energy all decrease over time.\n"
-              "- If any bar reaches 0 → Game Over.\n"
+              "- If any bar reaches 0, Game Over.\n"
               "- Keep all bars high for 3 minutes to win!",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
